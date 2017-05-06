@@ -1,0 +1,8 @@
+<view style="height:150rpx;line-height:150rpx;background:#ffffff;margin-top:10rpx;padding:0 10rpx;">
+    <label>点击选择头像：</label>
+    <image bindtap="eportrait" mode="scaleToFill" src="{{newimg||'/image/portrait.jpg'}}" style="height:100rpx;width:100rpx;float:right;margin-top:12px;"></image>
+</view>
+<view style="height:150rpx;line-height:150rpx;background:#ffffff;margin-top:10rpx;padding:0 10rpx;">
+    <label>点击选择头像：</label>
+    <image bindtap="eportrait1" mode="scaleToFill" src="{{newimg||'/image/portrait.jpg'}}" style="height:100rpx;width:100rpx;float:right;margin-top:12px;"></image>
+</view>
