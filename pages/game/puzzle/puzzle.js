@@ -7,43 +7,7 @@ Page({
     levelArr: [
       {
         id: 2,
-        text: '弱智'
-      },
-      {
-        id: 3,
-        text: '简单'
-      },
-      {
-        id: 4,
-        text: '普通'
-      },
-      {
-        id: 5,
-        text: '困难'
-      },
-      {
-        id: 6,
-        text: '变态'
-      },
-      {
-        id: 7,
-        text: '无语'
-      },
-      {
-        id: 8,
-        text: '天才'
-      },
-      {
-        id: 9,
-        text: '疯子'
-      },
-      {
-        id: 10,
-        text: '想死'
-      },
-      {
-        id: 11,
-        text: '已死'
+        text: '4'
       }
     ],
     WIDTH: 0,
