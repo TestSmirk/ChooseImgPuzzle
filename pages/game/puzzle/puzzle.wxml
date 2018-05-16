@@ -1,0 +1,27 @@
+<view class='tui-fixed'>
+  <view style='height:{{HEIGHT}}px;width:{{WIDTH * 3}}px;transform: translateX({{trans}}px);' class='tui-puzzle-box'>
+    <!--选择难度  -->
+    <view class='tui-puzzle-choose' style="height:{{HEIGHT}}px;width:{{WIDTH}}px;position:relative;float:left;background:url('../../src/images/puzzle-bg.jpg') no-repeat  0px 0px/{{WIDTH}}px {{HEIGHT}}px;">
+      <text class='tui-puzzle-choose-name'>选择关卡</text>
+      <view class='tui-puzzle-btn' wx:key="typekey" data-type="{{item.id}}" bindtap='getType' wx:for="{{levelArr}}">{{item.text}}</view>
+    </view>
+    <!--选择图片  -->
+    <view class='tui-puzzle-choose' style="height:{{HEIGHT}}px;width:{{WIDTH}}px;position:relative;float:left;background:url('../../src/images/puzzle-bg.jpg') no-repeat  0px 0px/{{WIDTH}}px {{HEIGHT}}px;box-sizing:border-box;padding:20px;">
+      <text class='tui-puzzle-choose-name'>选择图片</text>
+      <view class='scroll' style="width:100%;height:calc(100% - 90px);overflow-y:auto;">
+
+        <block wx:for="{{imgArr}}">
+        <view class='tui-puzzle-img' data-url='{{item}}' bindtap='getUrl'  wx:key="imgkey" style="background:url('{{item}}') no-repeat  0px 0px/100% 100%;"></view>
+        </block>
+      </view>
+    </view>
+    <!--游戏开始  -->
+    <view style='height:{{HEIGHT}}px;width:{{WIDTH}}px;position:relative;float:left;' bindtouchstart='onTouchStart' bindtouchmove='onTouchMove' bindtouchend='onTouchEnd'>
+      <view wx:for="{{imgPoints}}" wx:for-item="items" wx:key="content">
+      <view class='tui-puzzle-li' wx:for="{{items}}" wx:for-item="list" wx:key="items" style="top:{{list.y * height}}px;left:{{list.x * width}}px;background:url('{{imgUrl}}') no-repeat  {{-(list.px * width)}}px {{-(list.py * height)}}px/{{WIDTH}}px {{HEIGHT}}px;width:{{width}}px;height:{{height}}px;">
+      </view> 
+    </view>
+    <view class='tui-puzzle-li' style="top:{{currentY}}px;left:{{currentX}}px;background:url('{{imgUrl}}') no-repeat  {{-(currentPX * width)}}px {{-(currentPY * height)}}px/{{WIDTH}}px {{HEIGHT}}px;width:{{width}}px;height:{{height}}px;display:{{status ? 'block' : 'none'}};z-index:1000;"></view> 
+    </view>
+  </view>
+</view>

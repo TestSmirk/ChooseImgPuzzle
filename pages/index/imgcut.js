@@ -1,4 +1,4 @@
-﻿Page({
+Page({
     data: {
         ht: 250,
         wd: 250,
@@ -8,6 +8,7 @@
         angles: 0
     },
     onLoad: function (options) {
+      console.log(options)
         if (options) {
             this.setData({
                 ht: options.ht || 250,
@@ -90,11 +91,14 @@
         wx.canvasToTempFilePath({
             canvasId: 'imgcanvas',
             success: function (res) {
+              console.log(res.tempFilePath)
                 self.backpage.eimgcutcb(res.tempFilePath);
                 delete this.mangles;
-                wx.navigateBack({
-                    delta: 1
-                });
+
+                wx.navigateTo({
+                  url: '../game/puzzle/puzzle?temp=' + res.tempFilePath,
+                })
+              
             }
         });
     },
